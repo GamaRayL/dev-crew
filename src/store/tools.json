@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "label": "FIGMA",
+    "rate": "Free",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "icon": "figma"
+  },
+  {
+    "id": 2,
+    "label": "Sketch",
+    "rate": "Trial & Paid",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "icon": "sketch"
+  },
+  {
+    "id": 3,
+    "label": "Visual Studio Code",
+    "rate": "Free",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "icon": "vscode"
+  },
+  {
+    "id": 4,
+    "label": "Notion",
+    "rate": "Free & Paid",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "icon": "notion"
+  },
+  {
+    "id": 5,
+    "label": "Slack",
+    "rate": "Free & Paid",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "icon": "slack"
+  },
+  {
+    "id": 6,
+    "label": "Invision",
+    "rate": "Free & Paid",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "icon": "invision"
+  }
+]
