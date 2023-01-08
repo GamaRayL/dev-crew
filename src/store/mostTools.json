@@ -4,41 +4,47 @@
     "label": "FIGMA",
     "rate": "Free",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "icon": "figma"
+    "icon": "figma",
+    "favourite": false
   },
   {
     "id": 2,
     "label": "Sketch",
     "rate": "Trial & Paid",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "icon": "sketch"
+    "icon": "sketch",
+    "favourite": false
   },
   {
     "id": 3,
     "label": "Visual Studio Code",
     "rate": "Free",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "icon": "vscode"
+    "icon": "vscode",
+    "favourite": false
   },
   {
     "id": 4,
     "label": "Notion",
     "rate": "Free & Paid",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "icon": "notion"
+    "icon": "notion",
+    "favourite": false
   },
   {
     "id": 5,
     "label": "Slack",
     "rate": "Free & Paid",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "icon": "slack"
+    "icon": "slack",
+    "favourite": false
   },
   {
     "id": 6,
     "label": "Invision",
     "rate": "Free & Paid",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "icon": "invision"
+    "icon": "invision",
+    "favourite": false
   }
 ]

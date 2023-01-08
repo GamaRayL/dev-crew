@@ -1,5 +1,5 @@
-import { Input } from "components/Input";
-import { NavBar } from "components/NavBar";
+import {Input} from "components/Input";
+import {NavBar} from "components/NavBar";
 import styled from "styled-components";
 
 const SHeader = styled.header`
@@ -12,8 +12,8 @@ const SHeader = styled.header`
 `;
 const STitle = styled.h1`
   font-size: 50px;
-  font-weight: ${props => props.theme.fontWeight.medium};
-  color: ${props => props.theme.colors.white55};
+  font-weight: ${ props => props.theme.fontWeight.medium };
+  color: ${ props => props.theme.colors.white90 };
   margin-bottom: 30px;
 `;
 const SHeaderSection = styled.section`
@@ -27,7 +27,7 @@ const SHeaderBox = styled.div`
   justify-content: space-between;
 `;
 const SLastSymb = styled.span`
-  color: ${props => props.theme.colors.orange};
+  color: ${ props => props.theme.colors.orange };
 `;
 const SPgrph = styled.p`
   max-width: 487px;
@@ -45,15 +45,15 @@ const SIcon = styled.svg`
   width: 36px;
   height: 36px;
   cursor: pointer;
-  fill: ${props => props.theme.colors.white};
-  transition: ${props => props.theme.transition.middleAll};
+  fill: ${ props => props.theme.colors.white };
+  transition: ${ props => props.theme.transition.middleAll };
 
   &:hover {
-    fill: ${props => props.theme.colors.orange};
-    animation: icon 0.6s infinite alternate;
+    fill: ${ props => props.theme.colors.orange };
+    animation: soc 0.6s infinite alternate;
   }
 
-  @keyframes icon {
+  @keyframes soc {
     from {
       transform: translateY(2px);
     }
@@ -82,11 +82,8 @@ export const Header = () => {
       <NavBar />
       <SHeaderSection>
         <SHeaderBox>
-          <STitle>
-            {slicedTitle}
-            <SLastSymb>
-              {lastSymb}
-            </SLastSymb>
+          <STitle>{slicedTitle}
+            <SLastSymb>{lastSymb}</SLastSymb>
           </STitle>
           <SPgrph>
             Antool is a web collection of information on paid or free Design and Development tools
@@ -95,7 +92,7 @@ export const Header = () => {
           <SIconsBox>
             {icons.map(i =>
               <SIcon key={i}>
-                <use xlinkHref={`/social_sprite.svg#${i}`}></use>
+                <use xlinkHref={`social_sprite.svg#${ i }`}></use>
               </SIcon>
             )}
           </SIconsBox>

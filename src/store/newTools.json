@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "label": "Zeplin",
+    "rate": "Free & Paid",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "icon": "zeplin",
+    "favourite": false
+  },
+  {
+    "id": 2,
+    "label": "PHPStorm",
+    "rate": "Free",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "icon": "phpstorm",
+    "favourite": false
+  },
+  {
+    "id": 3,
+    "label": "Toolbox",
+    "rate": "Free",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "icon": "toolbox",
+    "favourite": false
+  },
+  {
+    "id": 4,
+    "label": "Procreate",
+    "rate": "Paid",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "icon": "procreate",
+    "favourite": false
+  }
+]

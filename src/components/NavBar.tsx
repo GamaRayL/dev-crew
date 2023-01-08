@@ -70,7 +70,7 @@ export const NavBar = () => {
     <SNav>
       <SLogoBox>
         <SLogoIcon>
-          <use xlinkHref={`/logos_sprite.svg#logo`}></use>
+          <use xlinkHref={`logos_sprite.svg#logo`}></use>
         </SLogoIcon>
         <SLabel>antools.</SLabel>
       </SLogoBox>
