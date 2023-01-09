@@ -1,54 +1,56 @@
 import styled from "styled-components";
 
-const SBrandPanel = styled.div`
+const S: any = {};
+
+S.BrandPanel = styled.div`
+  --b:2px;
   display: flex;
   align-items: center;
   flex-direction: column;
-  position: relative;
-  padding: 56px 84px;
-  border-radius: 26px;
-  background-color: #22292F;
+  background-color: #2C353D33;
+  overflow: hidden;
+  border-radius: 25px;
+  backdrop-filter: blur(25px);
+  padding: 55px 82px;
 
   &:before {
     content: "";
     position: absolute;
-    top: -2px;
-    bottom: -2px;
-    left: -2px;
-    right: -2px;
-    background:
-      linear-gradient(280deg,#FFFFFF00 85%,#4040408c),
-      linear-gradient(180deg,#FFFFFF00 85%,#3939398c),
-      linear-gradient(0deg,#FFFFFF00 85%,#3737378c),
-      linear-gradient(326deg,#FFFFFF00 90%,#ff484259);
-    border-radius: 26px;
     z-index: -1;
+    inset: 0;
+    background: var(--c,linear-gradient(326deg, #FFFFFF02 94%, #ff484233));
+    padding: var(--b);
+    border-radius: 25px;
+    -webkit-mask:
+       linear-gradient(#FFF 0 0) content-box,
+       linear-gradient(#FFF 0 0);
+            mask:
+       linear-gradient(#FFF 0 0) content-box,
+       linear-gradient(#FFF 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
     transition: ${props => props.theme.transition.middleAll};
   }
 
   &:after {
     content: "";
     position: absolute;
-    height: 14px;
-    left: 20px;
-    top: 18px;
-    box-shadow: 0 0 74px 20px #FF4842;
+    height: 12px;
+    left: 22px;
+    top: 22px;
+    box-shadow: 0 0 78px 18px #FF4842;
     transition: ${props => props.theme.transition.middleAll};
   }
+}
 `;
-const SWrap = styled.div`
-  overflow: hidden;
-  padding: 2px;
-  border-radius: 26px;
-`;
-const STitle = styled.h2`
+S.Title = styled.h2`
   color: ${props => props.theme.colors.white80};
   font-weight: ${props => props.theme.fontWeight.medium};
-  margin: 0 0 55px 0;
+  margin: 0 0 60px 0;
 `;
-const SBrands = styled.div`
+S.Brands = styled.div`
   display: flex;
-  gap: 108px;
+  gap: 80px;
   width: 1060px;
   height: 52px;
 `;
@@ -56,17 +58,15 @@ const SBrands = styled.div`
 export const BrandPanel = () => {
   const arBrands = ["microsoft", "google", "slack", "wordpress"];
   return (
-    <SWrap>
-      <SBrandPanel>
-        <STitle>Trusted more than 150+ brand</STitle>
-        <SBrands>
-          {arBrands.map(i =>
-            <svg key={i}>
-              <use xlinkHref={`/logos_sprite.svg#${i}`}></use>
-            </svg>
-          )}
-        </SBrands>
-      </SBrandPanel>
-    </SWrap>
+    <S.BrandPanel>
+      <S.Title>Trusted more than 150+ brand</S.Title>
+      <S.Brands>
+        {arBrands.map(i =>
+          <svg key={i}>
+            <use xlinkHref={`sprites/logos.svg#${i}`}></use>
+          </svg>
+        )}
+      </S.Brands>
+    </S.BrandPanel>
   );
 };

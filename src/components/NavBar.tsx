@@ -1,7 +1,9 @@
-import styled from "styled-components";
 import { Button } from "./Button";
+import styled from "styled-components";
 
-const SNav = styled.nav`
+const S: any = {};
+
+S.Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,17 +12,18 @@ const SNav = styled.nav`
   -ms-user-select: none;
   user-select: none;
 `;
-const SLogoBox = styled.div`
+S.LogoBox = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
+  margin-right: 48px;
 `;
-const SList = styled.ul`
+S.List = styled.ul`
   display: flex;
-  gap: 48px;
+  gap: 40px;
   list-style: none;
 `;
-const SItem = styled.li`
+S.Item = styled.li`
   cursor: pointer;
   transition: ${props => props.theme.transition.middleAll};
 
@@ -28,7 +31,7 @@ const SItem = styled.li`
     color: ${props => props.theme.colors.white};
   }
 `;
-const SLogoIcon = styled.svg`
+S.LogoIcon = styled.svg`
   width: 38px;
   height: 38px;
   cursor: pointer;
@@ -38,27 +41,27 @@ const SLogoIcon = styled.svg`
     transform: scale(1.1);
   }
 `;
-const SLabel = styled.span`
-  font-size: 22px;
+S.LogoName = styled.span`
+  font-size:  ${props => props.theme.fontSizes.medium22};
   font-weight: ${props => props.theme.fontWeight.semiBold};
-  color: ${props => props.theme.colors.white55};
+  color: ${props => props.theme.colors.white};
 `;
-const SButtonBox = styled.div`
+S.ButtonBox = styled.div`
   display: flex;
   gap: 12px;
 `;
-const SArrowIcon = styled.svg`
+S.ArrowIcon = styled.svg`
   stroke: ${props => props.theme.colors.white55};
   width: 18px;
   height: 18px;
   transition: ${props => props.theme.transition.middleAll};
 `;
-const SAdvItem = styled.div`
+S.AdvItem = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
 
-  &:hover ${SArrowIcon}{
+  &:hover ${S.ArrowIcon}{
     transform: rotate(180deg);
   }
 `;
@@ -67,24 +70,24 @@ const links = ["Home", "Categories", "My Collections", "Blog"];
 
 export const NavBar = () => {
   return (
-    <SNav>
-      <SLogoBox>
-        <SLogoIcon>
-          <use xlinkHref={`logos_sprite.svg#logo`}></use>
-        </SLogoIcon>
-        <SLabel>antools.</SLabel>
-      </SLogoBox>
-      <SList>
+    <S.Nav>
+      <S.LogoBox>
+        <S.LogoIcon>
+          <use xlinkHref="sprites/logos.svg#logo"></use>
+        </S.LogoIcon>
+        <S.LogoName>antools.</S.LogoName>
+      </S.LogoBox>
+      <S.List>
         {links.map(i =>
-          <SItem key={i}>{i === "Categories"
-            ? <SAdvItem>{i}<SArrowIcon><use xlinkHref={`/ui_sprite.svg#chevron_down`}></use></SArrowIcon></SAdvItem>
+          <S.Item key={i}>{i === "Categories"
+            ? <S.AdvItem>{i}<S.ArrowIcon><use xlinkHref="sprites/ui.svg#arrow"></use></S.ArrowIcon></S.AdvItem>
             : i}
-          </SItem>)}
-      </SList>
-      <SButtonBox>
+          </S.Item>)}
+      </S.List>
+      <S.ButtonBox>
         <Button text color="#ffffffc7">Login</Button>
         <Button>Sign Up</Button>
-      </SButtonBox>
-    </SNav>
+      </S.ButtonBox>
+    </S.Nav>
   );
 };

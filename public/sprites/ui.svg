@@ -1,6 +1,6 @@
 <svg width="0" height="0" class="hidden">
-  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" id="chevron_down">
-    <path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="white" stroke-opacity="0.55" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" id="arrow">
+    <path d="M4.5 6.75L9 11.25L13.5 6.75"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
   </symbol>
   <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" id="add_folder">
     <path d="M17.5 16.25H16.25V15C16.25 14.6685 16.1183 14.3505 15.8839 14.1161C15.6495 13.8817 15.3315 13.75 15 13.75C14.6685 13.75 14.3505 13.8817 14.1161 14.1161C13.8817 14.3505 13.75 14.6685 13.75 15V16.25H12.5C12.1685 16.25 11.8505 16.3817 11.6161 16.6161C11.3817 16.8505 11.25 17.1685 11.25 17.5C11.25 17.8315 11.3817 18.1495 11.6161 18.3839C11.8505 18.6183 12.1685 18.75 12.5 18.75H13.75V20C13.75 20.3315 13.8817 20.6495 14.1161 20.8839C14.3505 21.1183 14.6685 21.25 15 21.25C15.3315 21.25 15.6495 21.1183 15.8839 20.8839C16.1183 20.6495 16.25 20.3315 16.25 20V18.75H17.5C17.8315 18.75 18.1495 18.6183 18.3839 18.3839C18.6183 18.1495 18.75 17.8315 18.75 17.5C18.75 17.1685 18.6183 16.8505 18.3839 16.6161C18.1495 16.3817 17.8315 16.25 17.5 16.25Z" fill="white" fill-opacity="0.38"></path>

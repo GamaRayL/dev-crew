@@ -1,14 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import { createGlobalStyle, ThemeProvider } from 'styled-components';
-import { normalize } from 'styled-normalize';
-import { theme } from 'styles/theme';
+import {createGlobalStyle, ThemeProvider} from 'styled-components';
+import {normalize} from 'styled-normalize';
+import {theme} from 'styles/theme';
 
 const GlobalStyle = createGlobalStyle`
   ${normalize}
   * {
     box-sizing: border-box;
+  }
+
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  ul[class],
+  ol[class],
+  li,
+  figure,
+  figcaption,
+  blockquote,
+  dl,
+  dd {
+    margin: 0;
   }
 
   body {

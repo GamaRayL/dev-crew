@@ -1,17 +1,10 @@
-import {FC} from "react";
-import styled, {css} from "styled-components";
+import { FC } from "react";
+import { IButtonProps } from "types";
+import styled, { css } from "styled-components";
 
-interface IButtonProps {
-  text?: boolean;
-  contained?: boolean;
-  outlined?: boolean;
-  minWidth?: string;
-  color?: string;
-  bgColor?: string;
-  children?: React.ReactNode;
-}
+const S: any = {};
 
-const SButton = styled.button<IButtonProps>`
+S.Button = styled.button<IButtonProps>`
   padding: 14px 28px;
   border: none;
   border-radius: 8px;
@@ -20,7 +13,8 @@ const SButton = styled.button<IButtonProps>`
   color: ${props => props.theme.colors.white};
   background-color: ${props => props.theme.colors.orange};
   transition: ${props => props.theme.transition.middleAll};
-  min-width: ${({minWidth}: any) => minWidth ? minWidth : "auto"};
+  min-width: ${({ minWidth }: any) => minWidth ? minWidth : "auto"};
+  font-size: ${({ fz }) => fz || "auto"};
 
   &:hover {
     background-color: ${props => props.theme.colors.orange55};
@@ -29,6 +23,11 @@ const SButton = styled.button<IButtonProps>`
   &:active {
     transform: translateY(4px);
   }
+
+  ${props => props.medium && css`
+    padding: 20px 38px;
+    font-size:  ${props => props.theme.fontSizes.medium20};
+  `}
 
   ${props => props.outlined && css`
     background-color: transparent;
@@ -53,8 +52,10 @@ const SButton = styled.button<IButtonProps>`
   `}
 `;
 
+
+
 export const Button: FC<IButtonProps> = (props) => {
   return (
-    <SButton {...props}>{props.children}</SButton>
+    <S.Button {...props}>{props.children}</S.Button>
   );
 };

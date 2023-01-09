@@ -1,104 +1,135 @@
-import {Card} from "components/Card";
-import mostTools from "../../../store/mostTools.json";
-import newTools from "../../../store/newTools.json";
+import { useState } from "react";
+import { Card, Button, BrandPanel, Carousel, Form } from "components";
+import mostTools from "store/mostTools.json";
+import newTools from "store/newTools.json";
 import styled from "styled-components";
-import {useState} from "react";
-import {Button} from "components/Button";
-import {BrandPanel} from "components/BrandPanel";
 
-const SMain = styled.main`
+const S: any = {};
+
+S.Main = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
-const SSection = styled.div`
+S.Section = styled.div<{ fd?: string; ai?: string; mb?: string; }>`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 200px;
+  flex-direction: ${({ fd }) => fd || "column"};
+  align-items: ${({ ai }) => ai || "normal"};
+  margin-bottom: ${({ mb }) => mb || "200px"};
   width: 100%;
 `;
-const STextBox = styled.div`
-  text-align: center;
-  margin-bottom: 90px;
+S.TextBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 95px;
 `;
-const STitle = styled.h2`
-  font-size: 48px;
+S.Title = styled.h2`
+  font-size:  ${props => props.theme.fontSizes.large48};
   color: ${(props) => props.theme.colors.white90};
   font-weight: ${(props) => props.theme.fontWeight.medium};
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 `;
-const SPrgrph = styled.p<{mb?: string;}>`
-  font-size: 18px;
+S.Prgrph = styled.p<{ mb?: string; tAl?: string; }>`
+  font-size:  ${props => props.theme.fontSizes.medium18};
   max-width: 427px;
   color: ${(props) => props.theme.colors.white55};
+  font-weight: ${(props) => props.theme.fontWeight.medium};
   line-height: 30px;
-
-  margin-bottom: ${({mb}) => mb || "revert"}
+  text-align: ${({ tAl }) => tAl || "start"};
+  margin-bottom: ${({ mb }) => mb || "revert"}
 `;
-const SCardBox = styled.div`
+S.CardBox = styled.div<{ jc?: string, rg?: string; cg?: string; }>`
   display: flex;
-  justify-content: space-between;
+  justify-content: ${({ jc }) => jc || "flex-end"};
   flex-flow: wrap;
-  gap: 24px;
-  margin-bottom: 100px;
+  row-gap: ${({ rg }) => rg || "94px"};
+  column-gap: ${({ cg }) => cg || "24px"};
+  margin-bottom: 84px;
 `;
+S.SubscribeBox = styled(S.TextBox)`
+  margin-bottom: 80px;
+`
+S.MoreBox = styled.div`
+  width: -webkit-fill-available;
+`
 
 export const Main = () => {
-  const [arTools, setArTools] = useState(mostTools);
+  const [arMostTools, setMostArTools] = useState(mostTools);
+  const [arNewTools, setArNewTools] = useState(newTools);
 
   const onClickHandler = (id: number | undefined) => {
-    setArTools(
-      arTools.map((i) =>
-        i.id === id ? {...i, favourite: !i.favourite} : {...i}
+    setMostArTools(
+      arMostTools.map((i) =>
+        i.id === id ? { ...i, favourite: !i.favourite } : { ...i }
+      )
+    );
+    setArNewTools(
+      arNewTools.map((i) =>
+        i.id === id ? { ...i, favourite: !i.favourite } : { ...i }
       )
     );
   };
 
   return (
-    <SMain>
-      <SSection>
-        <STextBox>
-          <STitle>Most Popular Tools</STitle>
-          <SPrgrph>
+    <S.Main>
+      <S.Section ai="center">
+        <S.TextBox>
+          <S.Title>Most Popular Tools</S.Title>
+          <S.Prgrph tAl="center">
             Tools for the best Designers and Developers most popularly used in
             the world
-          </SPrgrph>
-        </STextBox>
-        <SCardBox>
-          {arTools.map((i) => (
+          </S.Prgrph>
+        </S.TextBox>
+        <S.CardBox jc="center">
+          {arMostTools.map(i => (
             <Card
               key={i.id}
               onClick={onClickHandler}
               {...i}
             />
           ))}
-        </SCardBox>
-        <Button outlined>Load more</Button>
-      </SSection>
-      <SSection>
+        </S.CardBox>
+        <Button outlined medium>Load more</Button>
+      </S.Section>
+      <S.Section mb="222px">
         <BrandPanel />
-      </SSection>
-      <SSection>
-        <div>
-          <STitle>Newcomer Tools</STitle>
-          <SPrgrph mb="60px">
+      </S.Section>
+      <S.Section fd="row" mb="94px">
+        <S.MoreBox>
+          <S.Title>Newcomer Tools</S.Title>
+          <S.Prgrph mb="60px">
             Wow! see the latest update of the most recommended tools from reliable designers and developers
-          </SPrgrph>
-          <Button>Explore more</Button>
-        </div>
-        <SCardBox>
-          {newTools.map(i =>
+          </S.Prgrph>
+          <Button medium>Explore more</Button>
+        </S.MoreBox>
+        <S.CardBox rg="42px">
+          {arNewTools.map(i =>
             <Card
               key={i.id}
               onClick={onClickHandler}
+              fz="14px"
+              mxWidth="284px"
+              pd="28px 22px"
               {...i}
             />
           )}
-        </SCardBox>
-      </SSection>
-      <section>Ronald Richards</section>
-      <section>Become a contributor?</section>
-    </SMain>
+        </S.CardBox>
+      </S.Section>
+      <S.Section mb="282px">
+        <Carousel />
+      </S.Section>
+      <S.Section mb="240px" ai="center">
+        <div>
+          <S.SubscribeBox>
+            <S.Title>Become a contributor?</S.Title>
+            <S.Prgrph tAl="center">
+              Join us and get tips & tricks to become a great Designer and Developer
+            </S.Prgrph>
+          </S.SubscribeBox>
+          <Form placeholder="Enter your email..." btnTxt="Join Us" />
+        </div>
+      </S.Section>
+    </S.Main>
   );
 };

@@ -14,9 +14,13 @@ export const theme = {
     red: "#FD3B41",
   },
   fontSizes: {
-    small: "1em",
-    medium: "2em",
-    large: "3em"
+    small: "14px",
+    medium18: "18px",
+    medium20: "20px",
+    medium24: "24px",
+    medium26: "26px",
+    large48: "48px",
+    large50: "50px"
   },
   fontWeight: {
     semiBold: "600",

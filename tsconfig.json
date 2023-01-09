@@ -5,7 +5,7 @@
     "baseUrl": "./src",
     "paths": {
       "components/*": ["components/*"],
-      "assets/*": ["assets/*"]
+      "store/*": ["store/*"]
     },
     "allowJs": true,
     "skipLibCheck": true,
