@@ -112,7 +112,7 @@ export const Main: FC = () => {
               onClick={onClickHandler}
               fz="14px"
               mxWidth="284px"
-              pd="28px 14px"
+              pd="28px 22px"
               {...i}
             />
           )}
