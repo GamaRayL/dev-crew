@@ -4,7 +4,8 @@ import styled from 'styled-components';
 
 const S: any = {};
 S.App = styled.div`
-  max-width: 1224px;
+  max-width: 1440px;
+  padding: 0 108px;
   margin: 0 auto;
 `
 
