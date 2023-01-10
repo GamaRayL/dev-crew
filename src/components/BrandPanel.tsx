@@ -12,7 +12,7 @@ S.BrandPanel = styled.div`
   overflow: hidden;
   border-radius: 25px;
   backdrop-filter: blur(25px);
-  padding: 55px 82px;
+  padding: 64px 82px 0 82px;
 
   &:before {
     content: "";
@@ -42,13 +42,13 @@ S.BrandPanel = styled.div`
 S.Title = styled.h2`
   color: ${props => props.theme.colors.white80};
   font-weight: ${props => props.theme.fontWeight.medium};
-  margin: 0 0 60px 0;
+  margin: 0 0 16px 0;
 `;
 S.Brands = styled.div`
   display: flex;
+  justify-content: space-between;
   gap: 80px;
   width: 1060px;
-  height: 52px;
 `;
 
 export const BrandPanel: FC = () => {
