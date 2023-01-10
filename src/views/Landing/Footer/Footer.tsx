@@ -1,7 +1,12 @@
 import { FC } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const S: any = {};
+
+const flexDr = css`
+  display: flex;
+  flex-direction: column;
+`
 
 S.Footer = styled.div`
   display: flex;
@@ -25,39 +30,38 @@ S.LogoIcon = styled.svg`
   }
 `;
 S.LogoName = styled.span`
-font-size:  ${props => props.theme.fontSizes.medium22};
+  font-size:  ${props => props.theme.fontSizes.medium22};
   font-weight: ${props => props.theme.fontWeight.semiBold};
   color: ${props => props.theme.colors.white};
 `;
 S.Copyright = styled.p`
+  margin-bottom: 22px;
   font-weight: ${props => props.theme.fontWeight.medium};
   color: ${props => props.theme.colors.white90};
-  margin-bottom: 22px;
 `;
 S.Description = styled.p`
-font-size:  ${props => props.theme.fontSizes.small};
   max-width: 260px;
   line-height: 25px;
+  font-size:  ${props => props.theme.fontSizes.small};
 `;
 S.Title = styled.h3`
-font-size:  ${props => props.theme.fontSizes.medium20};
+  font-size:  ${props => props.theme.fontSizes.medium20};
   font-weight: ${props => props.theme.fontWeight.medium};
   color: ${props => props.theme.colors.white90};
 `;
 S.List = styled.ul`
-  display: flex;
-  flex-direction: column;
+  ${flexDr}
   gap: 10px;
   list-style: none;
   padding-left: 0;
 `;
 S.Item = styled.li`
-  font-weight: ${props => props.theme.fontWeight.medium};
   line-height: 24px;
+  font-weight: ${props => props.theme.fontWeight.medium};
 `;
 S.ItemActive = styled(S.Item)`
-  transition: ${props => props.theme.transition.middleAll};
   cursor: pointer;
+  transition: ${props => props.theme.transition.middleAll};
 
   &:hover {
     color: ${props => props.theme.colors.white};
@@ -68,9 +72,8 @@ S.Group = styled.div`
   gap: 115px;
 `
 S.GroupBox = styled.div`
-  display: flex;
-  flex-direction: column;
   gap: 28px;
+  ${flexDr}
 `
 
 export const Footer: FC = () => {

@@ -2,47 +2,49 @@ import { FC, useState } from "react";
 import { Card, Button, BrandPanel, Carousel, Form } from "components";
 import mostTools from "store/mostTools.json";
 import newTools from "store/newTools.json";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const S: any = {};
 
-S.Main = styled.main`
+const flexDrAln = css`
   display: flex;
   flex-direction: column;
   align-items: center;
+`
+
+S.Main = styled.main`
+  ${flexDrAln};
 `;
 S.Section = styled.div<{ fd?: string; ai?: string; mb?: string; }>`
+  width: 100%;
   display: flex;
   flex-direction: ${({ fd }) => fd || "column"};
   align-items: ${({ ai }) => ai || "normal"};
   margin-bottom: ${({ mb }) => mb || "200px"};
-  width: 100%;
 `;
 S.TextBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  ${flexDrAln}
   margin-bottom: 95px;
 `;
 S.Title = styled.h2`
+  margin-bottom: 30px;
   font-size:  ${props => props.theme.fontSizes.large48};
   color: ${(props) => props.theme.colors.white90};
   font-weight: ${(props) => props.theme.fontWeight.medium};
-  margin-bottom: 30px;
 `;
 S.Prgrph = styled.p<{ mb?: string; tAl?: string; }>`
-  font-size:  ${props => props.theme.fontSizes.medium18};
   max-width: 427px;
+  line-height: 30px;
+  font-size:  ${props => props.theme.fontSizes.medium18};
   color: ${(props) => props.theme.colors.white55};
   font-weight: ${(props) => props.theme.fontWeight.medium};
-  line-height: 30px;
   text-align: ${({ tAl }) => tAl || "start"};
   margin-bottom: ${({ mb }) => mb || "revert"};
 `;
 S.CardBox = styled.div<{ jc?: string, rg?: string; cg?: string; }>`
   display: flex;
-  justify-content: ${({ jc }) => jc || "flex-end"};
   flex-flow: wrap;
+  justify-content: ${({ jc }) => jc || "flex-end"};
   row-gap: ${({ rg }) => rg || "94px"};
   column-gap: ${({ cg }) => cg || "24px"};
   margin-bottom: 84px;

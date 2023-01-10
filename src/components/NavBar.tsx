@@ -1,18 +1,21 @@
 import { Button } from "./Button";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { FC } from "react";
 
 const S: any = {};
 
-S.Nav = styled.nav`
+const flexAln = css`
   display: flex;
-  justify-content: space-between;
   align-items: center;
+`
+
+S.Nav = styled.nav`
+  ${flexAln}
+  justify-content: space-between;
   user-select: none;
 `;
 S.LogoBox = styled.div`
-  display: flex;
-  align-items: center;
+  ${flexAln}
   gap: 12px;
   margin-right: 48px;
 `;
@@ -55,8 +58,7 @@ S.ArrowIcon = styled.svg`
   transition: ${props => props.theme.transition.middleAll};
 `;
 S.AdvItem = styled.div`
-  display: flex;
-  align-items: center;
+  ${flexAln}
   gap: 8px;
 
   &:hover ${S.ArrowIcon}{

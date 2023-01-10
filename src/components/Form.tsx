@@ -10,10 +10,10 @@ S.Box = styled.div<IFormProps>`
   align-items: center;
   gap: 13px;
   position: relative;
-  max-width: ${({ mxWidth }) => mxWidth || "100%"} ;
   border-radius: 15px;
   padding: 8px 11px 8px 18px;
   background-color: #283036;
+  max-width: ${({ mxWidth }) => mxWidth || "100%"} ;
 
   :before {
     content: "";
@@ -36,16 +36,14 @@ S.Input = styled.input`
   outline: none;
   background: transparent;
   width: 100%;
-  font-size:  ${props => props.theme.fontSizes.small};
   color: inherit;
+  font-size:  ${props => props.theme.fontSizes.small};
 `;
 S.Form = styled.form`
   display: flex;
   gap: 40px;
   width: 100%;
 `;
-
-
 
 export const Form: FC<IFormProps> = ({ placeholder, btnTxt, mxWidth, iconSearch }) => {
   return (

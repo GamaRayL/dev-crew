@@ -1,12 +1,16 @@
 import { FC } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const S: any = {};
 
-S.Carousel = styled.div`
+const flexAln = css`
   display: flex;
-  justify-content: center;
   align-items: center;
+`
+
+S.Carousel = styled.div`
+  ${flexAln}
+  justify-content: center;
   position: relative;
 `;
 S.Svg = styled.svg`
@@ -47,13 +51,12 @@ S.Dot = styled.div`
   transition: ${props => props.theme.transition.middleAll};
 
   &:hover {
-    background-color: ${props => props.theme.colors.orange};
     transform: scale(1.1);
+    background-color: ${props => props.theme.colors.orange};
   }
 `;
 S.Item = styled.div`
-  display: flex;
-  align-items: center;
+  ${flexAln}
   gap: 58px;
   position: relative;
 
@@ -136,10 +139,10 @@ S.Label = styled.div`
 `;
 S.Prgrph = styled.p`
   max-width: 393px;
-  font-size: ${props => props.theme.fontSizes.small};
   line-height: 30px;
-  color: ${props => props.theme.colors.white78};
   margin-bottom: 92px;
+  font-size: ${props => props.theme.fontSizes.small};
+  color: ${props => props.theme.colors.white78};
 `;
 S.Box = styled.div`
   position: relative;
@@ -152,10 +155,10 @@ S.CircleImg = styled.img`
   z-index: -1;
 `;
 S.Name = styled.h3`
+  margin: 16px 0 10px 2px;
   font-size: ${props => props.theme.fontSizes.medium26};
   font-weight: ${props => props.theme.fontWeight.medium};
   color: ${props => props.theme.colors.white78};
-  margin: 16px 0 10px 2px;
 `;
 S.Career = styled.p`
   margin-bottom: 18px;

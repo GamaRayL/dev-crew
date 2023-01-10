@@ -1,12 +1,16 @@
 import { Form, NavBar } from "components";
 import { FC } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const S: any = {};
 
-S.Header = styled.header`
+const flexDr = css`
   display: flex;
   flex-direction: column;
+`
+
+S.Header = styled.header`
+  ${flexDr}
   gap: 106px;
   position: relative;
   padding-top: 26px;
@@ -14,29 +18,28 @@ S.Header = styled.header`
 `;
 S.Title = styled.h1`
   line-height: 70px;
+  margin-bottom: 30px;
   font-size:  ${props => props.theme.fontSizes.large50};
   font-weight: ${props => props.theme.fontWeight.medium};
   color: ${props => props.theme.colors.white90};
-  margin-bottom: 30px;
 `;
 S.HeaderSection = styled.section`
   display: flex;
   justify-content: space-between;
 `;
 S.HeaderBox = styled.div`
-  display: flex;
-  max-width: 600px;
-  flex-direction: column;
+  ${flexDr}
   justify-content: space-between;
+  max-width: 600px;
 `;
 S.LastSymb = styled.span`
   color: ${props => props.theme.colors.orange};
 `;
 S.Pgrph = styled.p`
   max-width: 487px;
-  font-size: ${props => props.theme.fontSizes.medium18};
   line-height: 30px;
   margin-bottom: 60px;
+  font-size: ${props => props.theme.fontSizes.medium18};
 `;
 S.IconsBox = styled.div`
   display: flex;
@@ -52,8 +55,8 @@ S.Icon = styled.svg`
   transition: ${props => props.theme.transition.middleAll};
 
   &:hover {
-    fill: ${props => props.theme.colors.orange};
     animation: soc 0.6s infinite alternate;
+    fill: ${props => props.theme.colors.orange};
   }
 
   @keyframes soc {
@@ -66,7 +69,7 @@ S.Icon = styled.svg`
     }
   }
 `;
-S.illustration = styled.img`
+S.Illustration = styled.img`
   pointer-events: none;
   user-select: none;
   position: absolute;
@@ -86,7 +89,7 @@ getCustomTitle("Awesome tools for Designer & Developer.");
 
 const icons = ["facebook", "instagram", "twitter"];
 
-export const Header:FC = () => {
+export const Header: FC = () => {
   return (
     <S.Header>
       <NavBar />
@@ -111,7 +114,7 @@ export const Header:FC = () => {
             )}
           </S.IconsBox>
         </S.HeaderBox>
-        <S.illustration src="images/illustration.svg" alt="" />
+        <S.Illustration src="images/illustration.svg" alt="" />
       </S.HeaderSection>
     </S.Header>
   );
