@@ -90,11 +90,9 @@ S.Person = styled.div`
     font-family: 'Lora', serif;
     font-size: 250px;
     transform: rotate(22deg);
-    background: linear-gradient(188.88deg, rgba(252, 252, 252, 0) 20.34%, rgba(255, 255, 255, 0.5) 155.72%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    background:
+      linear-gradient(188.88deg, rgba(252, 252, 252, 0) 20.34%, rgba(255, 255, 255, 0.5) 155.72%);
       background-clip: text;
-      text-fill-color: transparent;
   }
 `;
 S.Label = styled.div`
