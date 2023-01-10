@@ -13,7 +13,7 @@ S.Button = styled.button<IButtonProps>`
   color: ${props => props.theme.colors.white};
   background-color: ${props => props.theme.colors.orange};
   transition: ${props => props.theme.transition.middleAll};
-  min-width: ${({ minWidth }: any) => minWidth ? minWidth : "auto"};
+  min-width: ${({ minWidth }) => minWidth ? minWidth : "auto"};
   font-size: ${({ fz }) => fz || "auto"};
 
   &:hover {

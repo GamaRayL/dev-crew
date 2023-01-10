@@ -1,10 +1,11 @@
 import { FC } from "react";
 import { Button } from "./Button";
+import { ICardProps } from "types";
 import styled from "styled-components";
 
 const S: any = {};
 
-S.Card = styled.div<{ mxWidth?: string, pd?: string; }>`
+S.Card = styled.div<ICardProps>`
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -103,7 +104,7 @@ S.Rate = styled.div`
     color: ${props => props.theme.colors.yellow};
   }
 `;
-S.Prgrph = styled.div<{ fz?: string; }>`
+S.Prgrph = styled.div<ICardProps>`
   line-height: 30px;
   font-weight: ${props => props.theme.fontWeight.light};
   transition: ${props => props.theme.transition.middleAll};
@@ -122,7 +123,7 @@ S.IconsBox = styled.div`
   display: flex;
   gap: 12px;
 `;
-S.Icon = styled.div<{ favourite?: boolean; }>`
+S.Icon = styled.div<ICardProps>`
   width: 44px;
   height: 44px;
   cursor: pointer;
@@ -132,7 +133,7 @@ S.Icon = styled.div<{ favourite?: boolean; }>`
   background: ${({ favourite }) => favourite ? "#283036" : "transparent"};
   box-shadow: ${({ favourite }) => favourite ? "0px 5px 10px -3px #12121226" : "none"};
 `;
-S.Svg = styled.svg<{ favourite?: boolean; }>`
+S.Svg = styled.svg<ICardProps>`
   width: 100%;
   height: 100%;
   fill: ${({ favourite }) => favourite
@@ -155,18 +156,6 @@ S.Svg = styled.svg<{ favourite?: boolean; }>`
   }
 `;
 
-interface ICardProps {
-  id?: number;
-  label?: string;
-  rate?: string;
-  description?: string;
-  icon?: string;
-  mxWidth?: string;
-  fz?: string;
-  pd?: string;
-  favourite?: boolean;
-  onClick?: (id: number | undefined) => void;
-}
 
 export const Card: FC<ICardProps> = (props) => {
   const { label, rate, description, icon, id, favourite, onClick, mxWidth, pd, fz } = props;

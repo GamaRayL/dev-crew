@@ -3,6 +3,7 @@ import { normalize } from 'styled-normalize';
 
 export default createGlobalStyle`
   ${normalize}
+
   * {
     box-sizing: border-box;
   }
@@ -24,9 +25,8 @@ export default createGlobalStyle`
   }
 
   body {
-
     background-color: #1E252B;
-    color: #FFFFFF8c;
+    color: #FFFFFF8C;
     font-family: 'Poppins', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

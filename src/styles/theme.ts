@@ -13,6 +13,12 @@ export const theme = {
     yellow55: "#FFA5378C",
     red: "#FD3B41",
   },
+  media: {
+    extraLarge: '(max-width: 1440px)',
+    large: '(max-width: 960px)',
+    medium: '(max-width: 720px)',
+    small: '(max-width: 540px)',
+  },
   fontSizes: {
     small: "14px",
     medium18: "18px",

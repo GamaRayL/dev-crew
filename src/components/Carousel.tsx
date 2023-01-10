@@ -1,3 +1,4 @@
+import { FC } from "react";
 import styled from "styled-components";
 
 const S: any = {};
@@ -115,17 +116,13 @@ S.Label = styled.div`
     position:absolute;
     z-index:-1;
     inset: 0;
-    background: var(--c,linear-gradient(to right, #FFFFFF1a, #FFFFFF00));
+    background: var(--c, linear-gradient(to right, #FFFFFF1A, #FFFFFF00));
     padding: var(--b);
     border-radius: 8px;
-    -webkit-mask:
+    mask:
        linear-gradient(#FFF 0 0) content-box,
        linear-gradient(#FFF 0 0);
-            mask:
-       linear-gradient(#FFF 0 0) content-box,
-       linear-gradient(#FFF 0 0);
-    -webkit-mask-composite: xor;
-            mask-composite: exclude;
+    mask-composite: xor;
     transition: ${props => props.theme.transition.middleAll};
   }
 
@@ -166,7 +163,7 @@ S.Career = styled.p`
   margin-bottom: 18px;
 `;
 
-export const Carousel = () => {
+export const Carousel: FC = () => {
   return <S.Carousel>
     <S.LeftArow><use xlinkHref={`sprites/ui.svg#arrow`}></use></S.LeftArow>
     <S.Item>

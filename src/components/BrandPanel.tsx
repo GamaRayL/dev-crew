@@ -1,3 +1,4 @@
+import { FC } from "react";
 import styled from "styled-components";
 
 const S: any = {};
@@ -18,17 +19,13 @@ S.BrandPanel = styled.div`
     position: absolute;
     z-index: -1;
     inset: 0;
-    background: var(--c,linear-gradient(326deg, #FFFFFF02 94%, #ff484233));
+    background: var(--c, linear-gradient(326deg, #FFFFFF02 94%, #ff484233));
     padding: var(--b);
     border-radius: 25px;
-    -webkit-mask:
-       linear-gradient(#FFF 0 0) content-box,
-       linear-gradient(#FFF 0 0);
-            mask:
-       linear-gradient(#FFF 0 0) content-box,
-       linear-gradient(#FFF 0 0);
-    -webkit-mask-composite: xor;
-            mask-composite: exclude;
+    mask:
+      linear-gradient(#FFF 0 0) content-box,
+      linear-gradient(#FFF 0 0);
+    mask-composite: xor;
     transition: ${props => props.theme.transition.middleAll};
   }
 
@@ -41,7 +38,6 @@ S.BrandPanel = styled.div`
     box-shadow: 0 0 78px 18px #FF4842;
     transition: ${props => props.theme.transition.middleAll};
   }
-}
 `;
 S.Title = styled.h2`
   color: ${props => props.theme.colors.white80};
@@ -55,7 +51,7 @@ S.Brands = styled.div`
   height: 52px;
 `;
 
-export const BrandPanel = () => {
+export const BrandPanel: FC = () => {
   const arBrands = ["microsoft", "google", "slack", "wordpress"];
   return (
     <S.BrandPanel>

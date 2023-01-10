@@ -1,10 +1,11 @@
 import { FC } from "react";
 import { Button } from "components";
+import { IFormProps } from "types";
 import styled from "styled-components";
 
 const S: any = {};
 
-S.Box = styled.div<{ mxWidth?: string; }>`
+S.Box = styled.div<IFormProps>`
   display: flex;
   align-items: center;
   gap: 13px;
@@ -44,12 +45,7 @@ S.Form = styled.form`
   width: 100%;
 `;
 
-interface IFormProps {
-  placeholder?: string;
-  btnTxt?: string;
-  mxWidth?: string;
-  iconSearch?: boolean;
-}
+
 
 export const Form: FC<IFormProps> = ({ placeholder, btnTxt, mxWidth, iconSearch }) => {
   return (
@@ -58,7 +54,7 @@ export const Form: FC<IFormProps> = ({ placeholder, btnTxt, mxWidth, iconSearch 
         <use xlinkHref="sprites/ui.svg#search"></use>
       </S.Icon>
         : null}
-      <S.Form onSubmit={(e: any) => e.preventDefault()}>
+      <S.Form onSubmit={(e: React.FormEvent<HTMLFormElement>) => e.preventDefault()}>
         <S.Input
           type="text"
           placeholder={placeholder}

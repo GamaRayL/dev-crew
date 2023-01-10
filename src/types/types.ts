@@ -10,3 +10,23 @@ export interface IButtonProps {
   fz?: string;
   children?: React.ReactNode;
 }
+
+export interface ICardProps {
+  id?: number;
+  label?: string;
+  rate?: string;
+  description?: string;
+  icon?: string;
+  mxWidth?: string;
+  fz?: string;
+  pd?: string;
+  favourite?: boolean;
+  onClick?: (id: number | undefined) => void;
+}
+
+export interface IFormProps {
+  placeholder?: string;
+  btnTxt?: string;
+  mxWidth?: string;
+  iconSearch?: boolean;
+}

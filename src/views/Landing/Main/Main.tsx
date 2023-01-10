@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import { Card, Button, BrandPanel, Carousel, Form } from "components";
 import mostTools from "store/mostTools.json";
 import newTools from "store/newTools.json";
@@ -37,7 +37,7 @@ S.Prgrph = styled.p<{ mb?: string; tAl?: string; }>`
   font-weight: ${(props) => props.theme.fontWeight.medium};
   line-height: 30px;
   text-align: ${({ tAl }) => tAl || "start"};
-  margin-bottom: ${({ mb }) => mb || "revert"}
+  margin-bottom: ${({ mb }) => mb || "revert"};
 `;
 S.CardBox = styled.div<{ jc?: string, rg?: string; cg?: string; }>`
   display: flex;
@@ -54,7 +54,7 @@ S.MoreBox = styled.div`
   width: -webkit-fill-available;
 `
 
-export const Main = () => {
+export const Main: FC = () => {
   const [arMostTools, setMostArTools] = useState(mostTools);
   const [arNewTools, setArNewTools] = useState(newTools);
 

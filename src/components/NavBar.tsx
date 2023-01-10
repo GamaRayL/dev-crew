@@ -1,5 +1,6 @@
 import { Button } from "./Button";
 import styled from "styled-components";
+import { FC } from "react";
 
 const S: any = {};
 
@@ -7,9 +8,6 @@ S.Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-    -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 `;
 S.LogoBox = styled.div`
@@ -68,7 +66,7 @@ S.AdvItem = styled.div`
 
 const links = ["Home", "Categories", "My Collections", "Blog"];
 
-export const NavBar = () => {
+export const NavBar: FC = () => {
   return (
     <S.Nav>
       <S.LogoBox>

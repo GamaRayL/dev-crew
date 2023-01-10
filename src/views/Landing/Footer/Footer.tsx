@@ -1,3 +1,4 @@
+import { FC } from "react";
 import styled from "styled-components";
 
 const S: any = {};
@@ -72,7 +73,7 @@ S.GroupBox = styled.div`
   gap: 28px;
 `
 
-export const Footer = () => {
+export const Footer: FC = () => {
   return (
     <S.Footer>
       <div>

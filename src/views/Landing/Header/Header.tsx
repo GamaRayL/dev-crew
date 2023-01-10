@@ -1,4 +1,5 @@
 import { Form, NavBar } from "components";
+import { FC } from "react";
 import styled from "styled-components";
 
 const S: any = {};
@@ -85,7 +86,7 @@ getCustomTitle("Awesome tools for Designer & Developer.");
 
 const icons = ["facebook", "instagram", "twitter"];
 
-export const Header = () => {
+export const Header:FC = () => {
   return (
     <S.Header>
       <NavBar />
