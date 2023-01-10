@@ -164,12 +164,9 @@ export const Card: FC<ICardProps> = (props) => {
     <S.Wrap>
       <S.Card mxWidth={mxWidth} pd={pd}>
         <S.Header>
-          {/* <S.Logo>
+          <S.Logo>
             <S.Img src={`images/tools/${icon}.svg`} alt="" />
-          </S.Logo> */}
-          <svg width={64} height={64}>
-            <use xlinkHref={`sprites/tools.svg#${icon}`}></use>
-          </svg>
+          </S.Logo>
           <div>
             <S.Title>
               {label}
