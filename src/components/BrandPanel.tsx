@@ -8,7 +8,7 @@ S.BrandPanel = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: #2C353D33;
+  background-color: #2C353D40;
   overflow: hidden;
   border-radius: 25px;
   backdrop-filter: blur(25px);
@@ -19,7 +19,7 @@ S.BrandPanel = styled.div`
     position: absolute;
     z-index: -1;
     inset: 0;
-    background: var(--c, linear-gradient(326deg, #FFFFFF02 94%, #ff484233));
+    background: var(--c, linear-gradient(326deg, #FFFFFF02 94%, #FF484233));
     padding: var(--b);
     border-radius: 25px;
     mask:
