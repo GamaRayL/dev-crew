@@ -43,7 +43,7 @@ S.LogoIcon = styled.svg`
   }
 `;
 S.LogoName = styled.span`
-  font-size:  ${props => props.theme.fontSizes.medium22};
+  font-size: ${props => props.theme.fontSizes.medium22};
   font-weight: ${props => props.theme.fontWeight.semiBold};
   color: ${props => props.theme.colors.white};
 `;

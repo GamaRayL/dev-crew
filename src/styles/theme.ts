@@ -1,14 +1,14 @@
 export const theme = {
   colors: {
     white: "#FFFFFF",
-    white90: "#FFFFFFe6",
+    white90: "#FFFFFFE6",
     white80: "#FFFFFFCC",
     white78: "#FFFFFFC7",
-    white55: "#FFFFFF8c",
+    white55: "#FFFFFF8C",
     white38: "#FFFFFF61",
     white15: "#FFFFFF26",
     orange: "#FF6E30",
-    orange55: "#FF6E308c",
+    orange55: "#FF6E308C",
     orange6: "#FF6E300F",
     yellow: "#FFA537",
     yellow55: "#FFA5378C",
@@ -25,6 +25,7 @@ export const theme = {
     medium18: "18px",
     medium20: "20px",
     medium24: "24px",
+    medium22: "22px",
     medium26: "26px",
     large48: "48px",
     large50: "50px"

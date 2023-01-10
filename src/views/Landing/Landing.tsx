@@ -10,7 +10,7 @@ S.Line = styled.hr`
   left: 0;
   background-color: ${props => props.theme.colors.white15};
   height: 1px;
-  transform: scaleY(0.5);
+  transform: scaleY(0.1);
 `
 export const Landing = () => {
   return (

@@ -12,7 +12,7 @@ S.BrandPanel = styled.div`
   overflow: hidden;
   border-radius: 25px;
   backdrop-filter: blur(25px);
-  padding: 64px 82px 0 82px;
+  padding: 58px 82px 0 82px;
 
   &:before {
     content: "";

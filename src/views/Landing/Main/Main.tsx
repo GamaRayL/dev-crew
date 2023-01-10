@@ -45,9 +45,9 @@ S.CardBox = styled.div<{ jc?: string, rg?: string; cg?: string; }>`
   display: flex;
   flex-flow: wrap;
   justify-content: ${({ jc }) => jc || "flex-end"};
-  row-gap: ${({ rg }) => rg || "94px"};
+  row-gap: ${({ rg }) => rg || "97px"};
   column-gap: ${({ cg }) => cg || "24px"};
-  margin-bottom: 84px;
+  margin-bottom: 94px;
 `;
 S.SubscribeBox = styled(S.TextBox)`
   margin-bottom: 80px;
@@ -94,10 +94,10 @@ export const Main: FC = () => {
         </S.CardBox>
         <Button outlined medium>Load more</Button>
       </S.Section>
-      <S.Section mb="222px">
+      <S.Section mb="224px">
         <BrandPanel />
       </S.Section>
-      <S.Section fd="row" mb="94px">
+      <S.Section fd="row" mb="108px">
         <S.MoreBox>
           <S.Title>Newcomer Tools</S.Title>
           <S.Prgrph mb="60px">
@@ -112,16 +112,16 @@ export const Main: FC = () => {
               onClick={onClickHandler}
               fz="14px"
               mxWidth="284px"
-              pd="28px 22px"
+              pd="28px 14px"
               {...i}
             />
           )}
         </S.CardBox>
       </S.Section>
-      <S.Section mb="282px">
+      <S.Section mb="264px">
         <Carousel />
       </S.Section>
-      <S.Section mb="240px" ai="center">
+      <S.Section mb="242px" ai="center">
         <div>
           <S.SubscribeBox>
             <S.Title>Become a contributor?</S.Title>
