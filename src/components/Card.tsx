@@ -49,7 +49,7 @@ S.Card = styled.div<ICardProps>`
   }
 
   &:hover {
-    background-color: #222a2f;
+    background-color: #222A2F;
     transform: translateY(-25px);
   }
 
@@ -126,7 +126,7 @@ S.Icon = styled.div<ICardProps>`
   padding: 8px;
   border-radius: 8px;
   transition: ${props => props.theme.transition.middleAll};
-  background: ${({ favourite }) => favourite ? "#283036" : "transparent"};
+  background: ${({ favourite }) => favourite ? props => props.theme.colors.darkBlue : "transparent"};
   box-shadow: ${({ favourite }) => favourite ? "0px 5px 10px -3px #12121226" : "none"};
 `;
 S.Svg = styled.svg<ICardProps>`

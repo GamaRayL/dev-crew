@@ -12,7 +12,7 @@ S.Box = styled.div<IFormProps>`
   position: relative;
   border-radius: 15px;
   padding: 8px 11px 8px 18px;
-  background-color: #283036;
+  background-color: ${props => props.theme.colors.darkBlue};
   max-width: ${({ mxWidth }) => mxWidth || "100%"} ;
 
   :before {
@@ -22,7 +22,7 @@ S.Box = styled.div<IFormProps>`
     bottom: -2px;
     left: -2px;
     right: -2px;
-    background: linear-gradient(35deg, #FFFFFF1a, #FFFFFF00);
+    background: linear-gradient(35deg, #FFFFFF1A, #FFFFFF00);
     border-radius: 15px;
     z-index: -1;
   }
@@ -37,7 +37,7 @@ S.Input = styled.input`
   background: transparent;
   width: 100%;
   color: inherit;
-  font-size:  ${props => props.theme.fontSizes.small};
+  font-size: ${props => props.theme.fontSizes.small};
 `;
 S.Form = styled.form`
   display: flex;

@@ -7,6 +7,8 @@ export const theme = {
     white55: "#FFFFFF8C",
     white38: "#FFFFFF61",
     white15: "#FFFFFF26",
+    darkBlue: "#283036",
+    darkBlue20: "#28303633",
     orange: "#FF6E30",
     orange55: "#FF6E308C",
     orange6: "#FF6E300F",

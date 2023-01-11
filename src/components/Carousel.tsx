@@ -46,7 +46,7 @@ S.DotBox = styled.div`
 S.Dot = styled.div<{ selected: boolean; }>`
   width: 44px;
   height: 6px;
-  background-color: #283036;
+  background-color: ${props => props.theme.colors.darkBlue};;
   border-radius: 4px;
   cursor: pointer;
   transition: ${props => props.theme.transition.middleAll};
@@ -112,7 +112,7 @@ S.Label = styled.div`
   display: inline-block;
   position: relative;
   z-index: 0;
-  background-color: #28303680;
+  background-color: ${props => props.theme.colors.darkBlue20};
   overflow: hidden;
   border-radius: 8px;
   backdrop-filter: blur(25px);
