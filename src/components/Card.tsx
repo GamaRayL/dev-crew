@@ -79,7 +79,7 @@ S.Img = styled.img`
     opacity: 1;
   }
 `;
-S.Title = styled.div`
+S.Title = styled.p`
   font-size: ${props => props.theme.fontSizes.medium24};
   width: max-content;
   margin-bottom: 12px;
@@ -91,7 +91,7 @@ S.Title = styled.div`
     color: ${props => props.theme.colors.white90};
   }
 `;
-S.Rate = styled.div`
+S.Rate = styled.p`
   color: ${props => props.theme.colors.yellow55};
   transition: ${props => props.theme.transition.middleAll};
   font-size: ${props => props.theme.fontSizes.medium18};
@@ -100,7 +100,7 @@ S.Rate = styled.div`
     color: ${props => props.theme.colors.yellow};
   }
 `;
-S.Prgrph = styled.div<ICardProps>`
+S.Prgrph = styled.p<ICardProps>`
   line-height: 30px;
   font-weight: ${props => props.theme.fontWeight.light};
   transition: ${props => props.theme.transition.middleAll};

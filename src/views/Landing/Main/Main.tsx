@@ -100,7 +100,7 @@ export const Main: FC = () => {
           <Button medium>Explore more</Button>
         </S.MoreBox>
         <S.CardBox rg="42px">
-          {arTools.slice((arTools.length - 1) - 4, arTools.length - 1).map(i =>
+          {arTools.slice((arTools.length - 1) - 3, arTools.length).map(i =>
             <Card
               key={i.id}
               onClick={onClickHandler}
