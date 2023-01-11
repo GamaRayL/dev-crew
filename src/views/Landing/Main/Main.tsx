@@ -1,7 +1,6 @@
 import { FC, useState } from "react";
 import { Card, Button, BrandPanel, Carousel, Form } from "components";
-import mostTools from "store/mostTools.json";
-import newTools from "store/newTools.json";
+import tools from "store/tools.json";
 import styled, { css } from "styled-components";
 import { arSlides } from "store/slideElements";
 
@@ -58,20 +57,11 @@ S.MoreBox = styled.div`
 `;
 
 export const Main: FC = () => {
-  const [arMostTools, setMostArTools] = useState(mostTools);
-  const [arNewTools, setArNewTools] = useState(newTools);
+  const [arTools, setArTools] = useState(tools);
 
-  const onClickMostHandler = (id: number | undefined) => {
-    setMostArTools(
-      arMostTools.map((i) =>
-        i.id === id ? { ...i, favourite: !i.favourite } : { ...i }
-      )
-    );
-  };
-
-  const onClickNewHandler = (id: number | undefined) => {
-    setArNewTools(
-      arNewTools.map((i) =>
+  const onClickHandler = (id: number | undefined) => {
+    setArTools(
+      arTools.map((i) =>
         i.id === id ? { ...i, favourite: !i.favourite } : { ...i }
       )
     );
@@ -88,10 +78,10 @@ export const Main: FC = () => {
           </S.Prgrph>
         </S.TextBox>
         <S.CardBox jc="center">
-          {arMostTools.map(i => (
+          {arTools.slice(0, 6).map(i => (
             <Card
               key={i.id}
-              onClick={onClickMostHandler}
+              onClick={onClickHandler}
               {...i}
             />
           ))}
@@ -110,10 +100,10 @@ export const Main: FC = () => {
           <Button medium>Explore more</Button>
         </S.MoreBox>
         <S.CardBox rg="42px">
-          {arNewTools.map(i =>
+          {arTools.slice((arTools.length - 1) - 4, arTools.length - 1).map(i =>
             <Card
               key={i.id}
-              onClick={onClickNewHandler}
+              onClick={onClickHandler}
               fz="14px"
               mxWidth="284px"
               pd="28px 22px"

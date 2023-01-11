@@ -1,5 +1,4 @@
-[
-  {
+[{
     "id": 1,
     "label": "FIGMA",
     "rate": "Free",
@@ -46,5 +45,37 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "icon": "invision",
     "favourite": false
-  }
-]
+  },
+    {
+      "id": 7,
+      "label": "Zeplin",
+      "rate": "Free & Paid",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "icon": "zeplin",
+      "favourite": false
+    },
+    {
+      "id": 8,
+      "label": "PHPStorm",
+      "rate": "Free",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "icon": "phpstorm",
+      "favourite": false
+    },
+    {
+      "id": 9,
+      "label": "Toolbox",
+      "rate": "Free",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "icon": "toolbox",
+      "favourite": false
+    },
+    {
+      "id": 10,
+      "label": "Procreate",
+      "rate": "Paid",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "icon": "procreate",
+      "favourite": false
+    }
+  ]
