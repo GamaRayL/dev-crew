@@ -29,4 +29,5 @@ export interface IFormProps {
   btnTxt?: string;
   mxWidth?: string;
   iconSearch?: boolean;
+  focus?: boolean;
 }

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect, useRef } from "react";
 import { Button } from "components";
 import { IFormProps } from "types";
 import styled from "styled-components";
@@ -45,7 +45,13 @@ S.Form = styled.form`
   width: 100%;
 `;
 
-export const Form: FC<IFormProps> = ({ placeholder, btnTxt, mxWidth, iconSearch }) => {
+export const Form: FC<IFormProps> = ({ placeholder, btnTxt, mxWidth, iconSearch, focus }) => {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (focus) inputRef.current?.focus();
+  }, [focus]);
+
   return (
     <S.Box mxWidth={mxWidth}>
       {iconSearch ? <S.Icon>
@@ -55,6 +61,7 @@ export const Form: FC<IFormProps> = ({ placeholder, btnTxt, mxWidth, iconSearch 
       <S.Form onSubmit={(e: React.FormEvent<HTMLFormElement>) => e.preventDefault()}>
         <S.Input
           type="text"
+          ref={inputRef}
           placeholder={placeholder}
         />
         <Button minWidth="130px">{btnTxt}</Button>

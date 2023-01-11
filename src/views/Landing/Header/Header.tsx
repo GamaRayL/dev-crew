@@ -105,6 +105,7 @@ export const Header: FC = () => {
             btnTxt="Search"
             mxWidth="498px"
             iconSearch
+            focus
           />
           <S.IconsBox>
             {icons.map(i =>
