@@ -48,7 +48,6 @@ S.Brands = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 80px;
-  width: 1060px;
 `;
 
 export const BrandPanel: FC = () => {
@@ -58,7 +57,7 @@ export const BrandPanel: FC = () => {
       <S.Title>Trusted more than 150+ brand</S.Title>
       <S.Brands>
         {arBrands.map(i =>
-          <svg key={i}>
+          <svg width="100%" key={i}>
             <use xlinkHref={`sprites/logos.svg#${i}`}></use>
           </svg>
         )}
