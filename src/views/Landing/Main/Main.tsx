@@ -3,6 +3,7 @@ import { Card, Button, BrandPanel, Carousel, Form } from "components";
 import mostTools from "store/mostTools.json";
 import newTools from "store/newTools.json";
 import styled, { css } from "styled-components";
+import { arSlides } from "store/slideElements";
 
 const S: any = {};
 
@@ -10,7 +11,7 @@ const flexDrAln = css`
   display: flex;
   flex-direction: column;
   align-items: center;
-`
+`;
 
 S.Main = styled.main`
   ${flexDrAln};
@@ -51,21 +52,24 @@ S.CardBox = styled.div<{ jc?: string, rg?: string; cg?: string; }>`
 `;
 S.SubscribeBox = styled(S.TextBox)`
   margin-bottom: 80px;
-`
+`;
 S.MoreBox = styled.div`
   width: -webkit-fill-available;
-`
+`;
 
 export const Main: FC = () => {
   const [arMostTools, setMostArTools] = useState(mostTools);
   const [arNewTools, setArNewTools] = useState(newTools);
 
-  const onClickHandler = (id: number | undefined) => {
+  const onClickMostHandler = (id: number | undefined) => {
     setMostArTools(
       arMostTools.map((i) =>
         i.id === id ? { ...i, favourite: !i.favourite } : { ...i }
       )
     );
+  };
+
+  const onClickNewHandler = (id: number | undefined) => {
     setArNewTools(
       arNewTools.map((i) =>
         i.id === id ? { ...i, favourite: !i.favourite } : { ...i }
@@ -87,7 +91,7 @@ export const Main: FC = () => {
           {arMostTools.map(i => (
             <Card
               key={i.id}
-              onClick={onClickHandler}
+              onClick={onClickMostHandler}
               {...i}
             />
           ))}
@@ -109,7 +113,7 @@ export const Main: FC = () => {
           {arNewTools.map(i =>
             <Card
               key={i.id}
-              onClick={onClickHandler}
+              onClick={onClickNewHandler}
               fz="14px"
               mxWidth="284px"
               pd="28px 22px"
@@ -119,7 +123,7 @@ export const Main: FC = () => {
         </S.CardBox>
       </S.Section>
       <S.Section mb="264px">
-        <Carousel />
+        <Carousel arSlides={arSlides} />
       </S.Section>
       <S.Section mb="242px" ai="center">
         <div>

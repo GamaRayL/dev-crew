@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import styled, { css } from "styled-components";
 
 const S: any = {};
@@ -6,7 +6,7 @@ const S: any = {};
 const flexAln = css`
   display: flex;
   align-items: center;
-`
+`;
 
 S.Carousel = styled.div`
   ${flexAln}
@@ -29,6 +29,7 @@ S.Svg = styled.svg`
 S.LeftArow = styled(S.Svg)`
   position: absolute;
   left: 0;
+  top: 50%;
   transform: rotate(90deg);
 `;
 S.RightArrow = styled(S.Svg)`
@@ -41,14 +42,19 @@ S.DotBox = styled.div`
   display: flex;
   gap: 18px;
   bottom: 0;
-`
-S.Dot = styled.div`
+`;
+S.Dot = styled.div<{ selected: boolean; }>`
   width: 44px;
   height: 6px;
   background-color: #283036;
   border-radius: 4px;
   cursor: pointer;
   transition: ${props => props.theme.transition.middleAll};
+
+  ${({ selected }) => selected && css`
+    transform: scale(1.1);
+    background-color: ${props => props.theme.colors.orange};
+  `}
 
   &:hover {
     transform: scale(1.1);
@@ -84,6 +90,7 @@ S.Person = styled.div`
   width: 399px;
   height: 492px;
   user-select: none;
+  overflow: hidden;
 
   &:before {
     content: "“";
@@ -104,7 +111,6 @@ S.Person = styled.div`
 S.Label = styled.div`
   --b:1px;
   display: inline-block;
-  width: 265px;
   position: relative;
   z-index: 0;
   background-color: #28303680;
@@ -167,30 +173,80 @@ S.Career = styled.p`
   margin-bottom: 18px;
 `;
 
-export const Carousel: FC = () => {
-  return <S.Carousel>
-    <S.LeftArow><use xlinkHref={`sprites/ui.svg#arrow`}></use></S.LeftArow>
-    <S.Item>
-      <S.Box>
-        <S.Person>
-          <img src="images/david-suarez.png" alt="" />
-          <S.CircleImg src="images/circle.svg" alt="" />
-        </S.Person>
-        <S.Label>
-          <S.Name>Ronald Richards</S.Name>
-          <S.Career>Product Manager</S.Career>
-        </S.Label>
-      </S.Box>
-      <div>
-        <S.Prgrph>Incididunt cillum do sint sint enim ullamco id deserunt mollit qui reprehenderit do. Velit ex tempor cillum ad sint occaecat. Do nulla velit labore occaecat do deserunt Lorem magna officia incididunt consectetur amet. Sunt consectetur veniam minim ex commodo sint non. Occaecat aute officia excepteur non laboris id qui ad.</S.Prgrph>
-      </div>
-    </S.Item>
-    <S.RightArrow><use xlinkHref={`sprites/ui.svg#arrow`}></use></S.RightArrow>
-    <S.DotBox>
-      <S.Dot></S.Dot>
-      <S.Dot></S.Dot>
-      <S.Dot></S.Dot>
-    </S.DotBox>
+interface ICarouselProps {
+  arSlides: {
+    name: string;
+    img: string;
+    career: string;
+    selected: boolean;
+  }[];
+}
 
-  </S.Carousel>;
+export const Carousel: FC<ICarouselProps> = ({ arSlides }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [slides, setSlides] = useState(arSlides);
+
+  const getPreviousSlide = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+    setSlides(
+      slides.map((slide: any, slideIndex: any) =>
+        slideIndex === newIndex
+          ? { ...slide, selected: !slide.selected }
+          : { ...slide, selected: false }
+      )
+    );
+  };
+
+  const getNextSlide = () => {
+    const isLastSlide = currentIndex === slides.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+    setSlides(
+      slides.map((slide, slideIndex) =>
+        slideIndex === newIndex
+          ? { ...slide, selected: !slide.selected }
+          : { ...slide, selected: false }
+      )
+    );
+  };
+
+  const getToSlide = (index: number) => {
+    setCurrentIndex(index);
+    setSlides(
+      slides.map((slide, slideIndex) =>
+        slideIndex === index
+          ? { ...slide, selected: !slide.selected }
+          : { ...slide, selected: false }
+      )
+    );
+  };
+
+  return (
+    <S.Carousel>
+      <S.LeftArow onClick={getPreviousSlide}><use xlinkHref={`sprites/ui.svg#arrow`}></use></S.LeftArow>
+      <S.Item>
+        <S.Box>
+          <S.Person>
+            <img style={{ transition: "0.4s all", width: "100%" }} src={`images/${slides[currentIndex]["img"]}`} alt="" />
+            <S.CircleImg src="images/circle.svg" alt="" />
+          </S.Person>
+          <S.Label>
+            <S.Name>{slides[currentIndex]["name"]}</S.Name>
+            <S.Career>{slides[currentIndex]["career"]}</S.Career>
+          </S.Label>
+        </S.Box>
+        <div>
+          <S.Prgrph>Incididunt cillum do sint sint enim ullamco id deserunt mollit qui reprehenderit do. Velit ex tempor cillum ad sint occaecat. Do nulla velit labore occaecat do deserunt Lorem magna officia incididunt consectetur amet. Sunt consectetur veniam minim ex commodo sint non. Occaecat aute officia excepteur non laboris id qui ad.</S.Prgrph>
+        </div>
+      </S.Item>
+      <S.RightArrow onClick={getNextSlide}><use xlinkHref={`sprites/ui.svg#arrow`}></use></S.RightArrow>
+      <S.DotBox>
+        {slides.map((slide, slideIndex) => (
+          <S.Dot key={slideIndex} selected={slide.selected} onClick={() => getToSlide(slideIndex)}></S.Dot>
+        ))}
+      </S.DotBox>
+    </S.Carousel>
+  );
 };
